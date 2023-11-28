@@ -10,7 +10,9 @@
         "laravel/framework": "^9.0",
         "october/all": "^3.5",
         "box/spout": "^3.3",
-        "phpoffice/phpspreadsheet": "^1.29"
+        "phpoffice/phpspreadsheet": "^1.29",
+        "guzzlehttp/guzzle": "^7.8",
+        "google/apiclient": "^2.15"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5|^9.0"

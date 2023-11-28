@@ -1,6 +1,16 @@
-##
+description = "Default Layout"
+[resources]
+scss[] = 'application.sass.scss'
 ==
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Test</title>
+    {% styles %}
+    {% framework extras turbo %}
+    {% scripts %}
+</head>
+<body class="app">
     {% page %}
+</body>
 </html>

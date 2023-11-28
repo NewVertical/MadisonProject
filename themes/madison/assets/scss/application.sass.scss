@@ -1,0 +1,27 @@
+$blue: #005EB8;
+$dark-blue: #0A2E52;
+$light-blue: #6FA8DF;
+
+$text-color: #383C3F;
+$text-color-light: #465158;
+$text-color-lightest: #98A6AD;
+
+h4 {
+    color: $text-color-lightest;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h3 {
+    color: $text-color;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.app {
+    background: whitesmoke;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+@import 'components/components-module';
