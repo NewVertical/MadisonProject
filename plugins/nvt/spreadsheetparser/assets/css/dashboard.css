@@ -1,0 +1,70 @@
+.dashboard-row {
+    display: flex;
+    padding: 10px 0;
+}
+.dashboard-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: #efefef 1px solid;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background: #ffffff;
+    box-shadow: #efefef 0 0 4px 1px;
+    margin: 0 10px;
+}
+
+.small {
+    width: 15vw;
+    height: 140px;
+}
+
+.medium {
+    width: 33vw;
+    height: 300px;
+}
+
+.large {
+    width: 55vw;
+    height: 400px;
+}
+
+h4 {
+    color: #98A6AD;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+h3 {
+    color: #383C3F;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.perc-up {
+    color: limegreen;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.perc-down {
+    color: orangered;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.small-text {
+    color: #98A6AD;
+    font-size: 1em;
+}
+
+.app {
+    background: whitesmoke;
+    margin-left: 2%;
+    margin-right: 2%;
+}

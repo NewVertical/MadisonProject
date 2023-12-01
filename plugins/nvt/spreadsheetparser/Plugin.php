@@ -71,12 +71,10 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'spreadsheetparser' => [
                 'label' => 'SpreadsheetParser',
-                'url' => Backend::url('nvt/spreadsheetparser/mycontroller'),
+                'url' => Backend::url('nvt/spreadsheetparser/dashboard'),
                 'icon' => 'icon-leaf',
                 'permissions' => ['nvt.spreadsheetparser.*'],
                 'order' => 500,

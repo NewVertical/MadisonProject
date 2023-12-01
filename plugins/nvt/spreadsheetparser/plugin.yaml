@@ -1,0 +1,11 @@
+plugin:
+    name: 'Spreadsheet Parser'
+    description: 'Parses spreadsheets and provides functionality to insert data into application'
+    author: nvt
+    icon: oc-icon-bar-chart-o
+    homepage: ''
+navigation:
+    spreadsheet:
+        label: Spreadsheet
+        url: spreadsheetparser/dashboard
+        icon: oc-icon-bar-chart-o
