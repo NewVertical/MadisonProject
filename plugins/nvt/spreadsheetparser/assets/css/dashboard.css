@@ -17,6 +17,30 @@
     background: #ffffff;
     box-shadow: #efefef 0 0 4px 1px;
     margin: 0 10px;
+
+    .table-row {
+        display: flex;
+        font-size: .65em;
+        margin: 0 auto 0 auto;
+
+        .table-column {
+            min-width: fit-content;
+            .cell {
+                border-bottom: #98A6AD 3px solid;
+                border-right: #98A6AD 2px solid;
+                padding: 5px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bottom-cell {
+                border-right: #98A6AD 2px solid;
+                padding: 5px 10px;
+            }
+        }
+    }
 }
 
 .small {
@@ -30,7 +54,22 @@
 }
 
 .large {
+    width: 40vw;
+    height: 400px;
+}
+
+.xlarge {
     width: 55vw;
+    height: 400px;
+}
+
+.wide {
+    width: 60vw;
+    height: 300px;
+}
+
+.full {
+    width: 96vw;
     height: 400px;
 }
 
