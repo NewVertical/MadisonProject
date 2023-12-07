@@ -209,74 +209,87 @@
         <div class="dashboard-box full">
             <h4>Trucks Sold / Shipped YTD Comparison</h4>
             <br/>
-            <div class="table-row">
+            <div class="table-row" style="font-size: 1em">
+                <div class="table-column">
+                    <div class="cell" style="pointer-events: none">
+                        <h3 style="opacity: 0;">a</h3>
+                    </div>
+                    <div class="table-row no-margin">
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Category</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="table-column">
                     <div class="cell">
                         <h3>2022</h3>
+                    </div>
+                    <div class="table-row no-margin">
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Lumber</h3>
+                            </div>
+                        </div>
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Posts</h3>
+                            </div>
+                        </div>
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Total</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="table-column">
                     <div class="cell">
                         <h3>2021</h3>
                     </div>
+                    <div class="table-row no-margin">
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Lumber</h3>
+                            </div>
+                        </div>
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Posts</h3>
+                            </div>
+                        </div>
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Total</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="table-column">
                     <div class="cell">
                         <h3>2020</h3>
                     </div>
+                    <div class="table-row no-margin">
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Lumber</h3>
+                            </div>
+                        </div>
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Posts</h3>
+                            </div>
+                        </div>
+                        <div class="table-column">
+                            <div class="cell">
+                                <h3>Total</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="table-row">
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Category</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Lumber</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Posts</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Total</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Lumber</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Posts</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Total</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Lumber</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Posts</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Total</h3>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -339,7 +352,19 @@
         </div>
     </div>
 </div>
-
+<script>
+    rows = document.getElementsByClassName('table-row');
+    for (let i = 0; i < rows.length; i++) {
+        let cols = rows[i].children;
+        let width = (rows[i].clientWidth * .95) / cols.length;
+        if (rows[i].classList.contains('no-margin')) {
+            width = rows[i].clientWidth / cols.length;
+        }
+        for (let j = 0; j < cols.length; j++) {
+            cols[j].style.width = width.toString() + 'px';
+        }
+    }
+</script>
 <script>
     (async function() {
         const data = [

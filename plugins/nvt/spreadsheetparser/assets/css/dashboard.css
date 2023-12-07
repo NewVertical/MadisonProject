@@ -21,6 +21,8 @@
     .table-row {
         display: flex;
         font-size: .65em;
+        width: 100%;
+        justify-content: center;
         margin: 0 auto 0 auto;
 
         .table-column {
@@ -28,7 +30,7 @@
             .cell {
                 border-bottom: #98A6AD 3px solid;
                 border-right: #98A6AD 2px solid;
-                padding: 5px 20px;
+                padding: 12px 20px 5px 20px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
