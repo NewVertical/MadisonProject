@@ -14,7 +14,7 @@
                 <h3>$</h3>
                 <br/>
                 <div>
-                    <span id="freight_PL" class="small-text">% </span><span class="small-text"> Since last week</span>
+                    <span id="freight_PL" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
                 </div>
             </div>
             <div class="dashboard-box small">
@@ -22,7 +22,7 @@
                 <h3></h3>
                 <br/>
                 <div>
-                    <span id="trucks_YTD" class="small-text">% </span><span class="small-text"> Since last year</span>
+                    <span id="trucks_YTD" class="small-text color-change">% </span><span class="small-text"> Since last year</span>
                 </div>
             </div>
             <div class="dashboard-box small">
@@ -30,7 +30,7 @@
                 <h3>M</h3>
                 <br/>
                 <div>
-                    <span id="left_to_stage" class="small-text">% </span><span class="small-text"> Since last week</span>
+                    <span id="left_to_stage" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
                 </div>
             </div>
             <div class="dashboard-box small">
@@ -38,7 +38,7 @@
                 <h3>$</h3>
                 <br/>
                 <div>
-                    <span id="diesel_pricing" class="small-text">$ </span><span class="small-text"> Since last week</span>
+                    <span id="diesel_pricing" class="small-text color-change">$ </span><span class="small-text"> Since last week</span>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <h3></h3>
                 <br/>
                 <div>
-                    <span id="logs_to_peel" class="small-text">% </span><span class="small-text"> Since last week</span>
+                    <span id="logs_to_peel" class="small-text color-change color-change">% </span><span class="small-text"> Since last week</span>
                 </div>
             </div>
             <div class="dashboard-box small">
@@ -56,7 +56,7 @@
                 <h3></h3>
                 <br/>
                 <div>
-                    <span id="posts_to_treat" class="small-text">% </span><span class="small-text"> Since last week</span>
+                    <span id="posts_to_treat" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
                 </div>
             </div>
             <div class="dashboard-box small">
@@ -64,14 +64,14 @@
                 <h3> Prod. Total</h3>
                 <br/>
                 <div>
-                    <span id="employees" class="small-text"> </span><span class="small-text"> Since last week</span>
+                    <span id="employees" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
                 </div>
             </div>
             <div class="dashboard-box small">
                 <h4>Flatbed Ratio</h4>
                 <h3> loads/trucks</h3>
                 <div>
-                    <span id="flatbed_ratio" class="small-text"> </span><span class="small-text"> Since last week</span>
+                    <span id="flatbed_ratio" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
         <div class="dashboard-box medium">
             <h4>Copper Market</h4>
             <div style="display: flex;">
-                <h3 style="margin-right: 10px;">$ </h3><span id="copper_market" style="margin-right: 5px;">$ </span> <span class="small-text"> Month dd, YYYY</span>
+                <h3 style="margin-right: 10px;">$ </h3><span id="copper_market" class="color-change" style="margin-right: 5px;">$ </span> <span class="small-text"> Month dd, YYYY</span>
             </div>
             <div style="width: 100%; height: 70%;"><canvas id="copper_chart"></canvas></div>
         </div>
@@ -91,7 +91,7 @@
         <div class="dashboard-box xlarge">
             <h4>Lumber Market (2x4/2x12 Total)</h4>
             <div style="display: flex;">
-                <h3 style="margin-right: 10px;">$ </h3><span id="lumber_market" style="margin-right: 5px;">$ </span> <span class="small-text"> Since last week</span>
+                <h3 style="margin-right: 10px;">$ </h3><span id="lumber_market" class="color-change" style="margin-right: 5px;">$ </span> <span class="small-text"> Since last week</span>
             </div>
             <div style="width: 100%; height: 80%;"><canvas id="lumber_chart"></canvas></div>
         </div>
