@@ -8,7 +8,7 @@
 <br/>
 <div class="dashboard-row">
     <div class="dashboard-column">
-        <div class="dashboard-row">
+        <div class="dashboard-row flexible">
             <div class="mobile-row">
                 <div class="dashboard-box small">
                     <h4>Freight P/L</h4>
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="dashboard-row">
+        <div class="dashboard-row flexible">
             <div class="mobile-row">
                 <div class="dashboard-box small">
                     <h4>Logs to Peel</h4>
@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <div class="table-column">
-                    <div class="cell">
+                    <div class="cell" style="border-right: none;">
                         <h3>Trucks</h3>
                     </div>
                 </div>
@@ -217,8 +217,8 @@
         <div class="dashboard-box full">
             <h4>Trucks Sold / Shipped YTD Comparison</h4>
             <br/>
-            <div class="table-row" style="font-size: 1em">
-                <div class="table-column">
+            <div class="table-row mobile-column" style="font-size: 1em">
+                <div class="table-column hide-mobile">
                     <div class="cell" style="pointer-events: none">
                         <h3 style="opacity: 0;">a</h3>
                     </div>
@@ -231,10 +231,15 @@
                     </div>
                 </div>
                 <div class="table-column">
-                    <div class="cell">
+                    <div class="shift-cell">
                         <h3>2022</h3>
                     </div>
                     <div class="table-row no-margin">
+                        <div class="table-column show-mobile">
+                            <div class="cell">
+                                <h3>Category</h3>
+                            </div>
+                        </div>
                         <div class="table-column">
                             <div class="cell">
                                 <h3>Lumber</h3>
@@ -246,17 +251,22 @@
                             </div>
                         </div>
                         <div class="table-column">
-                            <div class="cell">
+                            <div class="cell" style="border-right: none;">
                                 <h3>Total</h3>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="table-column">
-                    <div class="cell">
+                    <div class="shift-cell">
                         <h3>2021</h3>
                     </div>
                     <div class="table-row no-margin">
+                        <div class="table-column show-mobile">
+                            <div class="cell">
+                                <h3>Category</h3>
+                            </div>
+                        </div>
                         <div class="table-column">
                             <div class="cell">
                                 <h3>Lumber</h3>
@@ -268,17 +278,22 @@
                             </div>
                         </div>
                         <div class="table-column">
-                            <div class="cell">
+                            <div class="cell" style="border-right: none;">
                                 <h3>Total</h3>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="table-column">
-                    <div class="cell">
+                    <div class="shift-cell">
                         <h3>2020</h3>
                     </div>
                     <div class="table-row no-margin">
+                        <div class="table-column show-mobile">
+                            <div class="cell">
+                                <h3>Category</h3>
+                            </div>
+                        </div>
                         <div class="table-column">
                             <div class="cell">
                                 <h3>Lumber</h3>
@@ -290,7 +305,7 @@
                             </div>
                         </div>
                         <div class="table-column">
-                            <div class="cell">
+                            <div class="cell" style="border-right: none;">
                                 <h3>Total</h3>
                             </div>
                         </div>
@@ -304,7 +319,7 @@
 </div>
 <div class="dashboard-row">
     <div class="dashboard-column">
-        <div class="dashboard-box large">
+        <div class="dashboard-box half">
             <h4>Top Ten Lumber Customers</h4>
             <br/>
             <div class="table-row">
@@ -324,7 +339,7 @@
                     </div>
                 </div>
                 <div class="table-column">
-                    <div class="cell">
+                    <div class="cell" style="border-right: none;">
                         <h3>Deviation</h3>
                     </div>
                 </div>
@@ -332,7 +347,7 @@
         </div>
     </div>
     <div class="dashboard-column">
-        <div class="dashboard-box large">
+        <div class="dashboard-box half">
             <h4>Top Ten Post Customers</h4>
             <br/>
             <div class="table-row">
@@ -352,7 +367,7 @@
                     </div>
                 </div>
                 <div class="table-column">
-                    <div class="cell">
+                    <div class="cell" style="border-right: none;">
                         <h3>Deviation</h3>
                     </div>
                 </div>
@@ -363,16 +378,25 @@
 <script>
     document.onload(calcWidth());
 
-    addEventListener("resize", calcWidth());
+    addEventListener("resize", calcWidth(event));
 
     function calcWidth() {
-        rows = document.getElementsByClassName('table-row');
+        let rows = document.getElementsByClassName('table-row');
         for (let i = 0; i < rows.length; i++) {
             let cols = rows[i].children;
-            let width = (rows[i].clientWidth * .95) / cols.length;
-            if (rows[i].classList.contains('no-margin')) {
-                width = rows[i].clientWidth / cols.length;
+            let modifier = .95;
+            let divisor = cols.length;
+            if (window.innerWidth >= 1024) {
+                for (let j = 0; j < cols.length; j++) {
+                    if (cols[j].classList.contains('show-mobile')) {
+                        divisor -= 1;
+                    }
+                }
             }
+            if (rows[i].classList.contains('no-margin')) {
+                modifier = 1;
+            }
+            let width = (rows[i].clientWidth * modifier) / divisor;
             for (let j = 0; j < cols.length; j++) {
                 cols[j].style.width = width.toString() + 'px';
             }

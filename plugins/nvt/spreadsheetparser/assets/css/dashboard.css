@@ -36,16 +36,19 @@
             .cell {
                 border-bottom: #98A6AD 3px solid;
                 border-right: #98A6AD 2px solid;
-                padding: 12px 20px 5px 20px;
+                padding: 9px 5px 3px 5px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
             }
 
-            .bottom-cell {
-                border-right: #98A6AD 2px solid;
-                padding: 5px 10px;
+            .shift-cell {
+                padding: 9px 5px 3px 5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
             }
         }
     }
@@ -62,6 +65,11 @@
 }
 
 .large {
+    width: 96vw;
+    height: 400px;
+}
+
+.half {
     width: 96vw;
     height: 400px;
 }
@@ -116,15 +124,67 @@ h3 {
     margin-right: 2%;
 }
 
+.show-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+.hide-mobile {
+    display: none;
+}
+
+.mobile-column {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (min-width: 1024px) {
+    .flexible {
+        flex-direction: row;
+        align-items: normal;
+        justify-content: normal;
+    }
+
     .dashboard-box {
         .table-row {
             font-size: .65em;
+
+            .table-column {
+                .cell {
+                    padding: 12px 20px 5px 20px;
+                }
+            }
         }
+    }
+
+    .small {
+        width: 15vw;
     }
 }
 
 @media (min-width: 1750px) {
+    .dashboard-box {
+        .table-row {
+            font-size: .65em;
+
+            .table-column {
+                .shift-cell {
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: #98A6AD 3px solid;
+                    border-right: #98A6AD 2px solid;
+                }
+            }
+        }
+    }
+
+    .mobile-column {
+        flex-direction: row;
+        justify-content: normal;
+        align-items: normal;
+    }
+
     .dashboard-row {
         flex-direction: row;
         align-items: normal;
@@ -139,16 +199,16 @@ h3 {
         margin: 0 10px;
     }
 
-    .small {
-        width: 15vw;
-    }
-
     .medium {
         width: 30vw;
     }
 
     .large {
         width: 40vw;
+    }
+
+    .half {
+        width: 47.5vw;
     }
 
     .xlarge {
@@ -161,5 +221,14 @@ h3 {
 
     .full {
         width: 96vw;
+    }
+
+    .show-mobile {
+        display: none;
+    }
+
+    .hide-mobile {
+        display: flex;
+        flex-direction: column;
     }
 }
