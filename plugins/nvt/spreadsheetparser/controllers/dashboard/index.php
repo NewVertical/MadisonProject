@@ -1,408 +1,379 @@
-
 <head>
     <title>Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.js"></script>
 </head>
+<div class="app">
+    <h2>Home Dashboard</h2>
+    <br/>
 
-<h2>Home Dashboard</h2>
-<br/>
-<div class="dashboard-row">
-    <div class="dashboard-column">
-        <div class="dashboard-row flexible">
-            <div class="mobile-row">
-                <div class="dashboard-box small">
-                    <h4>Freight P/L</h4>
-                    <h3>$</h3>
-                    <br/>
-                    <div>
-                        <span id="freight_PL" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-xxl-8 col-lg-8 col-md-2">
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-xxl-3 col-lg-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Freight P/L</h4>
+                        <h3>$</h3>
+                        <br/>
+                        <div>
+                            <span id="freight_PL" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+                        </div>
                     </div>
                 </div>
-                <div class="dashboard-box small">
-                    <h4>Trucks YTD</h4>
-                    <h3></h3>
-                    <br/>
-                    <div>
-                        <span id="trucks_YTD" class="small-text color-change">% </span><span class="small-text"> Since last year</span>
+                <div class="col-xxl-3 col-lg-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Trucks YTD</h4>
+                        <h3></h3>
+                        <br/>
+                        <div>
+                            <span id="trucks_YTD" class="small-text color-change">% </span><span class="small-text"> Since last year</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Left to Stage (bdft)</h4>
+                        <h3>M</h3>
+                        <br/>
+                        <div>
+                            <span id="left_to_stage" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Diesel Pricing</h4>
+                        <h3>$</h3>
+                        <br/>
+                        <div>
+                            <span id="diesel_pricing" class="small-text color-change">$ </span><span class="small-text"> Since last week</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="mobile-row">
-                <div class="dashboard-box small">
-                    <h4>Left to Stage (bdft)</h4>
-                    <h3>M</h3>
-                    <br/>
-                    <div>
-                        <span id="left_to_stage" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+            <div class="row">
+                <div class="col-xxl-3 col-lg-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Logs to Peel</h4>
+                        <h3></h3>
+                        <br/>
+                        <div>
+                            <span id="logs_to_peel" class="small-text color-change color-change">% </span><span class="small-text"> Since last week</span>
+                        </div>
                     </div>
                 </div>
-                <div class="dashboard-box small">
-                    <h4>Diesel Pricing</h4>
-                    <h3>$</h3>
-                    <br/>
-                    <div>
-                        <span id="diesel_pricing" class="small-text color-change">$ </span><span class="small-text"> Since last week</span>
+                <div class="col-xxl-3 col-lg-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Posts to Treat</h4>
+                        <h3></h3>
+                        <br/>
+                        <div>
+                            <span id="posts_to_treat" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Employees</h4>
+                        <h3> Prod. Total</h3>
+                        <br/>
+                        <div>
+                            <span id="employees" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-l-3 col-m-6">
+                    <div class="dashboard-box small">
+                        <h4>Flatbed Ratio</h4>
+                        <h3> loads/trucks</h3>
+                        <div>
+                            <span id="flatbed_ratio" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="dashboard-row flexible">
-            <div class="mobile-row">
-                <div class="dashboard-box small">
-                    <h4>Logs to Peel</h4>
-                    <h3></h3>
-                    <br/>
-                    <div>
-                        <span id="logs_to_peel" class="small-text color-change color-change">% </span><span class="small-text"> Since last week</span>
-                    </div>
+        <div class="col-xxl-4 col-lg-12">
+            <div class="dashboard-box medium">
+                <h4>Copper Market</h4>
+                <div style="display: flex;">
+                    <h3 style="margin-right: 10px;">$ </h3><span id="copper_market" class="color-change" style="margin-right: 5px;">$ </span> <span class="small-text"> Month dd, YYYY</span>
                 </div>
-                <div class="dashboard-box small">
-                    <h4>Posts to Treat</h4>
-                    <h3></h3>
-                    <br/>
-                    <div>
-                        <span id="posts_to_treat" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
-                    </div>
-                </div>
+                <div style="width: 100%; height: 70%;"><canvas id="copper_chart"></canvas></div>
             </div>
-            <div class="mobile-row">
-                <div class="dashboard-box small">
-                    <h4>Employees</h4>
-                    <h3> Prod. Total</h3>
-                    <br/>
-                    <div>
-                        <span id="employees" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
-                    </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-xxl-6 col-lg-12">
+            <div class="dashboard-box half">
+                <h4>Lumber Market (2x4/2x12 Total)</h4>
+                <div style="display: flex;">
+                    <h3 style="margin-right: 10px;">$ </h3><span id="lumber_market" class="color-change" style="margin-right: 5px;">$ </span> <span class="small-text"> Since last week</span>
                 </div>
-                <div class="dashboard-box small">
-                    <h4>Flatbed Ratio</h4>
-                    <h3> loads/trucks</h3>
-                    <div>
-                        <span id="flatbed_ratio" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
+                <div style="width: 100%; height: 80%;"><canvas id="lumber_chart"></canvas></div>
+            </div>
+        </div>
+        <div class="col-xxl-6 col-lg-12">
+            <div class="dashboard-box half">
+                <h4>Product Pricing Chart</h4>
+                <br/>
+                <div class="row">
+                    <div class="col-auto g-0" style="margin-left: auto;">
+                        <div class="cell">
+                            <h3>Product</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Current Price</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Deviation</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Last Year Price</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0" style="margin-right: auto;">
+                        <div class="cell" style="border-right: none">
+                            <h3>Up/Down YTY</h3>
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-auto g-0" style="margin-left: auto;">
+                        <div class="cell">
+                            <h3>Total</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="dashboard-column" style="padding: 10px 0;">
-        <div class="dashboard-box medium">
-            <h4>Copper Market</h4>
-            <div style="display: flex;">
-                <h3 style="margin-right: 10px;">$ </h3><span id="copper_market" class="color-change" style="margin-right: 5px;">$ </span> <span class="small-text"> Month dd, YYYY</span>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-xxl-5 col-lg-12">
+            <div class="dashboard-box medium">
+                <h4>Inventory Value</h4>
+                <br/>
+                <div class="row">
+                    <div class="col-auto g-0" style="margin-left: auto;">
+                        <div class="cell">
+                            <h3>Inventory</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Current Value</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Yesterday Value</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0" style="margin-right: auto;">
+                        <div class="cell">
+                            <h3>Deviation</h3>
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-auto g-0" style="margin-left: auto;">
+                        <div class="cell">
+                            <h3>Total</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div style="width: 100%; height: 70%;"><canvas id="copper_chart"></canvas></div>
+        </div>
+        <div class="col-xxl-7 col-lg-12">
+            <div class="dashboard-box medium">
+                <h4>Inventory Volume</h4>
+                <br/>
+                <div class="row">
+                    <div class="col-auto g-0" style="margin-left: auto;">
+                        <div class="cell">
+                            <h3>Category</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>MBF</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0" style="border-right: #98A6AD 2px solid;">
+                        <div class="cell">
+                            <h3>Trucks</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Calculations</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>MBF</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0" style="margin-right: auto;">
+                        <div class="cell" style="border-right: none">
+                            <h3>Trucks</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="dashboard-row">
-    <div class="dashboard-column">
-        <div class="dashboard-box xlarge">
-            <h4>Lumber Market (2x4/2x12 Total)</h4>
-            <div style="display: flex;">
-                <h3 style="margin-right: 10px;">$ </h3><span id="lumber_market" class="color-change" style="margin-right: 5px;">$ </span> <span class="small-text"> Since last week</span>
-            </div>
-            <div style="width: 100%; height: 80%;"><canvas id="lumber_chart"></canvas></div>
-        </div>
-    </div>
-    <div class="dashboard-column">
-        <div class="dashboard-box large">
-            <h4>Product Pricing Chart</h4>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="dashboard-box full">
+            <h4>Trucks Sold / Shipped YTD Comparison</h4>
             <br/>
-            <div class="table-row">
-                <div class="table-column">
+            <div class="row">
+                <div class="col-1 g-0">
                     <div class="cell">
-                        <h3>Product</h3>
-                    </div>
-                    <div class="cell">
-                        <h3>Total</h3>
+                        <h3 style="opacity: 0; visibility: hidden; pointer-events: none;">a</h3>
                     </div>
                 </div>
-                <div class="table-column">
+                <div class="col g-0">
                     <div class="cell">
-                        <h3>Current Price</h3>
+                        <h3>2022</h3>
                     </div>
                 </div>
-                <div class="table-column">
+                <div class="col g-0">
                     <div class="cell">
-                        <h3>Deviation</h3>
+                        <h3>2021</h3>
                     </div>
                 </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Last Year Price</h3>
-                    </div>
-                </div>
-                <div class="table-column">
+                <div class="col g-0">
                     <div class="cell" style="border-right: none">
-                        <h3>Up/Down YTY</h3>
+                        <h3>2020</h3>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="dashboard-row">
-    <div class="dashboard-column">
-        <div class="dashboard-box medium">
-            <h4>Inventory Value</h4>
-            <br/>
-            <div class="table-row">
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Inventory</h3>
-                    </div>
-                    <div class="cell">
-                        <h3>Total</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Current Value</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Yesterday Value</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell" style="border-right: none;">
-                        <h3>Difference</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dashboard-column">
-        <div class="dashboard-box wide">
-            <h4>Inventory Volume</h4>
-            <br/>
-            <div class="table-row">
-                <div class="table-column">
+                <div class="w-100"></div>
+                <div class="col-1 g-0">
                     <div class="cell">
                         <h3>Category</h3>
                     </div>
                 </div>
-                <div class="table-column">
+                <div class="col g-0">
                     <div class="cell">
-                        <h3>MBF</h3>
+                        <h3>Lumber</h3>
                     </div>
                 </div>
-                <div class="table-column" style="border-right: #98A6AD 2px solid;">
+                <div class="col g-0">
                     <div class="cell">
-                        <h3>Trucks</h3>
+                        <h3>Posts</h3>
                     </div>
                 </div>
-                <div class="table-column">
+                <div class="col g-0">
                     <div class="cell">
-                        <h3>Calculations</h3>
+                        <h3>Total</h3>
                     </div>
                 </div>
-                <div class="table-column">
+                <div class="col g-0">
                     <div class="cell">
-                        <h3>MBF</h3>
+                        <h3>Lumber</h3>
                     </div>
                 </div>
-                <div class="table-column">
+                <div class="col g-0">
+                    <div class="cell">
+                        <h3>Posts</h3>
+                    </div>
+                </div>
+                <div class="col g-0">
+                    <div class="cell">
+                        <h3>Total</h3>
+                    </div>
+                </div>
+                <div class="col g-0">
+                    <div class="cell">
+                        <h3>Lumber</h3>
+                    </div>
+                </div>
+                <div class="col g-0">
+                    <div class="cell">
+                        <h3>Posts</h3>
+                    </div>
+                </div>
+                <div class="col g-0">
                     <div class="cell" style="border-right: none;">
-                        <h3>Trucks</h3>
+                        <h3>Total</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-xxl-6 col-lg-12">
+            <div class="dashboard-box half">
+                <h4>Top Ten Lumber Customers</h4>
+                <br/>
+                <div class="row">
+                    <div class="col-auto g-0" style="margin-left: auto;">
+                        <div class="cell">
+                            <h3>#</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Customer</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>MBF</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Trucks YTD</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0" style="margin-right: auto;">
+                        <div class="cell">
+                            <h3>Deviation</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-6 col-lg-12">
+            <div class="dashboard-box half">
+                <h4>Top Ten Post Customers</h4>
+                <br/>
+                <div class="row">
+                    <div class="col-auto g-0" style="margin-left: auto;">
+                        <div class="cell">
+                            <h3>#</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Customer</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>FT3</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0">
+                        <div class="cell">
+                            <h3>Trucks YTD</h3>
+                        </div>
+                    </div>
+                    <div class="col-auto g-0" style="margin-right: auto;">
+                        <div class="cell">
+                            <h3>Deviation</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="dashboard-row">
-    <div class="dashboard-column">
-        <div class="dashboard-box full">
-            <h4>Trucks Sold / Shipped YTD Comparison</h4>
-            <br/>
-            <div class="table-row mobile-column" style="font-size: 1em">
-                <div class="table-column hide-mobile">
-                    <div class="cell" style="pointer-events: none">
-                        <h3 style="opacity: 0;">a</h3>
-                    </div>
-                    <div class="table-row no-margin">
-                        <div class="table-column">
-                            <div class="cell">
-                                <h3>Category</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="shift-cell">
-                        <h3>2022</h3>
-                    </div>
-                    <div class="table-row no-margin">
-                        <div class="table-column show-mobile">
-                            <div class="cell">
-                                <h3>Category</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell">
-                                <h3>Lumber</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell">
-                                <h3>Posts</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell" style="border-right: none;">
-                                <h3>Total</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="shift-cell">
-                        <h3>2021</h3>
-                    </div>
-                    <div class="table-row no-margin">
-                        <div class="table-column show-mobile">
-                            <div class="cell">
-                                <h3>Category</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell">
-                                <h3>Lumber</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell">
-                                <h3>Posts</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell" style="border-right: none;">
-                                <h3>Total</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="shift-cell">
-                        <h3>2020</h3>
-                    </div>
-                    <div class="table-row no-margin">
-                        <div class="table-column show-mobile">
-                            <div class="cell">
-                                <h3>Category</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell">
-                                <h3>Lumber</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell">
-                                <h3>Posts</h3>
-                            </div>
-                        </div>
-                        <div class="table-column">
-                            <div class="cell" style="border-right: none;">
-                                <h3>Total</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="table-row">
-            </div>
-        </div>
-    </div>
-</div>
-<div class="dashboard-row">
-    <div class="dashboard-column">
-        <div class="dashboard-box half">
-            <h4>Top Ten Lumber Customers</h4>
-            <br/>
-            <div class="table-row">
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>#</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>MBF</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Trucks YTD</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell" style="border-right: none;">
-                        <h3>Deviation</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dashboard-column">
-        <div class="dashboard-box half">
-            <h4>Top Ten Post Customers</h4>
-            <br/>
-            <div class="table-row">
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>#</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>FT3</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell">
-                        <h3>Trucks YTD</h3>
-                    </div>
-                </div>
-                <div class="table-column">
-                    <div class="cell" style="border-right: none;">
-                        <h3>Deviation</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-    document.onload(calcWidth());
-
-    addEventListener("resize", calcWidth(event));
-
-    function calcWidth() {
-        let rows = document.getElementsByClassName('table-row');
-        for (let i = 0; i < rows.length; i++) {
-            let cols = rows[i].children;
-            let modifier = .95;
-            let divisor = cols.length;
-            if (window.innerWidth >= 1024) {
-                for (let j = 0; j < cols.length; j++) {
-                    if (cols[j].classList.contains('show-mobile')) {
-                        divisor -= 1;
-                    }
-                }
-            }
-            if (rows[i].classList.contains('no-margin')) {
-                modifier = 1;
-            }
-            let width = (rows[i].clientWidth * modifier) / divisor;
-            for (let j = 0; j < cols.length; j++) {
-                cols[j].style.width = width.toString() + 'px';
-            }
-        }
-    }
-</script>
 <script>
     (async function() {
         const data = [
