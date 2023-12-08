@@ -9,69 +9,77 @@
 <div class="dashboard-row">
     <div class="dashboard-column">
         <div class="dashboard-row">
-            <div class="dashboard-box small">
-                <h4>Freight P/L</h4>
-                <h3>$</h3>
-                <br/>
-                <div>
-                    <span id="freight_PL" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+            <div class="mobile-row">
+                <div class="dashboard-box small">
+                    <h4>Freight P/L</h4>
+                    <h3>$</h3>
+                    <br/>
+                    <div>
+                        <span id="freight_PL" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+                    </div>
+                </div>
+                <div class="dashboard-box small">
+                    <h4>Trucks YTD</h4>
+                    <h3></h3>
+                    <br/>
+                    <div>
+                        <span id="trucks_YTD" class="small-text color-change">% </span><span class="small-text"> Since last year</span>
+                    </div>
                 </div>
             </div>
-            <div class="dashboard-box small">
-                <h4>Trucks YTD</h4>
-                <h3></h3>
-                <br/>
-                <div>
-                    <span id="trucks_YTD" class="small-text color-change">% </span><span class="small-text"> Since last year</span>
+            <div class="mobile-row">
+                <div class="dashboard-box small">
+                    <h4>Left to Stage (bdft)</h4>
+                    <h3>M</h3>
+                    <br/>
+                    <div>
+                        <span id="left_to_stage" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+                    </div>
                 </div>
-            </div>
-            <div class="dashboard-box small">
-                <h4>Left to Stage (bdft)</h4>
-                <h3>M</h3>
-                <br/>
-                <div>
-                    <span id="left_to_stage" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
-                </div>
-            </div>
-            <div class="dashboard-box small">
-                <h4>Diesel Pricing</h4>
-                <h3>$</h3>
-                <br/>
-                <div>
-                    <span id="diesel_pricing" class="small-text color-change">$ </span><span class="small-text"> Since last week</span>
+                <div class="dashboard-box small">
+                    <h4>Diesel Pricing</h4>
+                    <h3>$</h3>
+                    <br/>
+                    <div>
+                        <span id="diesel_pricing" class="small-text color-change">$ </span><span class="small-text"> Since last week</span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="dashboard-row">
-            <div class="dashboard-box small">
-                <h4>Logs to Peel</h4>
-                <h3></h3>
-                <br/>
-                <div>
-                    <span id="logs_to_peel" class="small-text color-change color-change">% </span><span class="small-text"> Since last week</span>
+            <div class="mobile-row">
+                <div class="dashboard-box small">
+                    <h4>Logs to Peel</h4>
+                    <h3></h3>
+                    <br/>
+                    <div>
+                        <span id="logs_to_peel" class="small-text color-change color-change">% </span><span class="small-text"> Since last week</span>
+                    </div>
+                </div>
+                <div class="dashboard-box small">
+                    <h4>Posts to Treat</h4>
+                    <h3></h3>
+                    <br/>
+                    <div>
+                        <span id="posts_to_treat" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+                    </div>
                 </div>
             </div>
-            <div class="dashboard-box small">
-                <h4>Posts to Treat</h4>
-                <h3></h3>
-                <br/>
-                <div>
-                    <span id="posts_to_treat" class="small-text color-change">% </span><span class="small-text"> Since last week</span>
+            <div class="mobile-row">
+                <div class="dashboard-box small">
+                    <h4>Employees</h4>
+                    <h3> Prod. Total</h3>
+                    <br/>
+                    <div>
+                        <span id="employees" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
+                    </div>
                 </div>
-            </div>
-            <div class="dashboard-box small">
-                <h4>Employees</h4>
-                <h3> Prod. Total</h3>
-                <br/>
-                <div>
-                    <span id="employees" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
-                </div>
-            </div>
-            <div class="dashboard-box small">
-                <h4>Flatbed Ratio</h4>
-                <h3> loads/trucks</h3>
-                <div>
-                    <span id="flatbed_ratio" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
+                <div class="dashboard-box small">
+                    <h4>Flatbed Ratio</h4>
+                    <h3> loads/trucks</h3>
+                    <div>
+                        <span id="flatbed_ratio" class="small-text color-change"> </span><span class="small-text"> Since last week</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -353,15 +361,21 @@
     </div>
 </div>
 <script>
-    rows = document.getElementsByClassName('table-row');
-    for (let i = 0; i < rows.length; i++) {
-        let cols = rows[i].children;
-        let width = (rows[i].clientWidth * .95) / cols.length;
-        if (rows[i].classList.contains('no-margin')) {
-            width = rows[i].clientWidth / cols.length;
-        }
-        for (let j = 0; j < cols.length; j++) {
-            cols[j].style.width = width.toString() + 'px';
+    document.onload(calcWidth());
+
+    addEventListener("resize", calcWidth());
+
+    function calcWidth() {
+        rows = document.getElementsByClassName('table-row');
+        for (let i = 0; i < rows.length; i++) {
+            let cols = rows[i].children;
+            let width = (rows[i].clientWidth * .95) / cols.length;
+            if (rows[i].classList.contains('no-margin')) {
+                width = rows[i].clientWidth / cols.length;
+            }
+            for (let j = 0; j < cols.length; j++) {
+                cols[j].style.width = width.toString() + 'px';
+            }
         }
     }
 </script>

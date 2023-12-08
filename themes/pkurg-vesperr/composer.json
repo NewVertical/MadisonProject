@@ -1,0 +1,8 @@
+{
+    "name": "pkurg/vesperr-theme",
+    "type": "october-theme",
+    "description": "Vesperr is a clean, modern and stylish digital agency website template created with Bootstrap framework. It can be use by agencies, freelancers, corporate business, creative designers or any creative professionals. It comes with smooth interaction animations and makes the user experience more natural and soothing.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

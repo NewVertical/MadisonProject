@@ -15,7 +15,8 @@
         "google/apiclient": "^2.15",
         "ext-libxml": "*",
         "ext-dom": "*",
-        "illuminate/database": "*"
+        "illuminate/database": "*",
+        "pkurg/vesperr-theme": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5|^9.0"
