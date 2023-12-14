@@ -101,13 +101,15 @@ class Dashboard extends Controller
         ]);
         $copper_market_as_array = [];
 
-        $index = 0;
-        foreach ($copper_market as $day) {
-            if ($index >= 10) {
-                break;
+        if (!empty($copper_market)) {
+            $index = 0;
+            foreach ($copper_market as $day) {
+                if ($index >= 10) {
+                    break;
+                }
+                $copper_market_as_array[$day->day] = [$day->price, $day->day];
+                $index++;
             }
-            $copper_market_as_array[$day->day] = [$day->price, $day->day];
-            $index++;
         }
         $this->vars['copper_market'] = $copper_market_as_array;
 
