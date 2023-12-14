@@ -81,27 +81,34 @@ class Dashboard extends Controller
         $this->vars['trucks_ytd'] = TrucksYtd::all();
 
         $product_prices_unsorted = ProductPrices::all();
-        $product_prices = $product_prices_unsorted->sortBy([
-            ['date', 'desc'],
-            ['product_name', 'asc'],
-        ]);
-
-        $this->vars['product_prices'] = $product_prices->where('date', $product_prices[sizeof($product_prices)-1]->date)->all();
+        if (sizeof($product_prices_unsorted) > 0) {
+            $product_prices = $product_prices_unsorted->sortBy([
+                ['date', 'desc'],
+                ['product_name', 'asc'],
+            ]);
+            $this->vars['product_prices'] = $product_prices->where('date', $product_prices[sizeof($product_prices) - 1]->date)->all();
+        } else {
+            $this->vars['product_prices'] = $product_prices_unsorted;
+        }
 
         $inv_value_unsorted = InventoryValue::all();
-        $inv_values = $inv_value_unsorted->sortBy([
-           ['date', 'asc'],
-           ['inventory_type', 'asc'],
-        ]);
+        if (sizeof($inv_value_unsorted) > 0) {
+            $inv_values = $inv_value_unsorted->sortBy([
+                ['date', 'asc'],
+                ['inventory_type', 'asc'],
+            ]);
 
-        $this->vars['inv_values'] = $inv_values->where('date', $inv_values[sizeof($inv_values)-1]->date);
+            $this->vars['inv_values'] = $inv_values->where('date', $inv_values[sizeof($inv_values) - 1]->date);
+        } else {
+            $this->vars['inv_values'] = $inv_value_unsorted;
+        }
 
         $copper_market = CopperMarket::all()->sortBy([
             ['date', 'desc']
         ]);
         $copper_market_as_array = [];
 
-        if (!empty($copper_market)) {
+        if (sizeof($copper_market) > 0) {
             $index = 0;
             foreach ($copper_market as $day) {
                 if ($index >= 10) {

@@ -181,7 +181,7 @@
                 <h4>Copper Market</h4>
                 <div style="display: flex;">
                     <h3 style="margin-right: 10px;">
-                        $<?php if (!empty($copper_market)) { ?>
+                        $<?php if (sizeof($copper_market) > 0) { ?>
                         <?= array_values($copper_market)[sizeof(array_values($copper_market))-1][0] ?>
                         <?php } ?>
                     </h3>
@@ -189,7 +189,7 @@
                         $
                     </span>
                     <span class="small-text">
-                        <?php if (!empty($copper_market)) { ?>
+                        <?php if (sizeof($copper_market) > 0) { ?>
                         <?= date('F j, Y', strtotime(array_values($copper_market)[sizeof(array_values($copper_market))-1][1])) ?>
                         <?php } ?>
                     </span>
@@ -223,13 +223,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($product_prices as $product) { ?>
+                        <?php if (sizeof($product_prices) > 0) { foreach($product_prices as $product) { ?>
                             <tr>
                                 <th scope="row"><?= $product->product_name ?></th>
                                 <td><?= $product->current_price ?></td>
                                 <td><?= $product->deviation ?></td>
                             </tr>
-                        <?php } ?>
+                        <?php } }?>
                     </tbody>
                 </table>
             </div>
