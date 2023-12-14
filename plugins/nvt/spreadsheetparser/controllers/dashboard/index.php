@@ -12,11 +12,16 @@
                 <div class="col-xxl-3 col-lg-3 col-md-6">
                     <div class="dashboard-box small">
                         <h4>Freight P/L</h4>
-                        <h3>$<?= end($freight_pl)->freight_pl ?></h3>
+                        <h3>$<?php if (end($freight_pl)) { ?>
+                            <?= end($freight_pl)->freight_pl ?>
+                            <?php } ?>
+                        </h3>
                         <br/>
                         <div>
                             <span id="freight_PL" class="small-text color-change">
+                                <?php if (end($freight_pl)) { ?>
                                 <?= end($freight_pl)->deviation?>%
+                                <?php } ?>
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -26,12 +31,16 @@
                     <div class="dashboard-box small">
                         <h4>Trucks YTD</h4>
                         <h3>
-                            <?= end($trucks_ytd)->trucks_ytd ?>
+                            <?php if (end($trucks_ytd)) { ?>
+                                <?= end($trucks_ytd)->trucks_ytd ?>
+                            <?php } ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="trucks_YTD" class="small-text color-change">
-                                <?= end($trucks_ytd)->deviation ?>%
+                                <?php if (end($trucks_ytd)) { ?>
+                                    <?= end($trucks_ytd)->deviation ?>
+                                <?php } ?>%
                             </span>
                             <span class="small-text"> Since last year</span>
                         </div>
@@ -41,12 +50,16 @@
                     <div class="dashboard-box small">
                         <h4>Left to Stage (bdft)</h4>
                         <h3>
-                           <?= end($left_to_stage)->left_to_stage ?> M
+                            <?php if (end($left_to_stage)) { ?>
+                                <?= end($left_to_stage)->left_to_stage ?>
+                            <?php } ?> M
                         </h3>
                         <br/>
                         <div>
                             <span id="left_to_stage" class="small-text color-change">
-                                <?= end($left_to_stage)->deviation ?>%
+                                <?php if (end($left_to_stage)) { ?>
+                                    <?= end($left_to_stage)->deviation ?>
+                                <?php } ?>%
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -57,12 +70,16 @@
                     <div class="dashboard-box small">
                         <h4>Diesel Pricing</h4>
                         <h3>
-                            $<?= end($diesel_prices)->diesel_price ?>
+                            $<?php if (end($diesel_prices)) { ?>
+                            <?= end($diesel_prices)->diesel_price ?>
+                            <?php } ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="diesel_pricing" class="small-text color-change">
-                                $<?= end($diesel_prices)->deviation ?>
+                                $<?php if (end($diesel_prices)) { ?>
+                                <?= end($diesel_prices)->deviation ?>
+                                <?php } ?>
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -74,12 +91,16 @@
                     <div class="dashboard-box small">
                         <h4>Logs to Peel</h4>
                         <h3>
+                            <?php if (end($logs_to_peel)) { ?>
                             <?= end($logs_to_peel)->logs ?>
+                            <?php } ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="logs_to_peel" class="small-text color-change color-change">
+                                <?php if (end($logs_to_peel)) { ?>
                                 <?= end($logs_to_peel)->deviation ?>%
+                                <?php } ?>
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -89,12 +110,16 @@
                     <div class="dashboard-box small">
                         <h4>Posts to Treat</h4>
                         <h3>
+                            <?php if (end($posts_to_treat)) { ?>
                             <?= end($posts_to_treat)->posts ?>
+                            <?php } ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="posts_to_treat" class="small-text color-change">
+                                <?php if (end($posts_to_treat)) { ?>
                                 <?= end($posts_to_treat)->deviation ?>
+                                <?php } ?>
                             </span><span class="small-text"> Since last week</span>
                         </div>
                     </div>
@@ -104,14 +129,18 @@
                         <h4>Employees</h4>
                         <div style="display: flex">
                             <h3>
+                                <?php if (end($employees)) { ?>
                                 <?= end($employees)->employees_prod ?>
+                                <?php } ?>
                                 <span class="small-text" style="font-size: .65em; font-weight: normal;">
                                     Prod.
                                 </span>
                             </h3>
                             <h3>
                                 &nbsp;
+                                <?php if (end($employees)) { ?>
                                  <?= end($employees)->employees_total ?>
+                                <?php } ?>
                                 <span class="small-text" style="font-size: .65em; font-weight: normal;">
                                     Total
                                 </span>
@@ -120,7 +149,9 @@
                         <br/>
                         <div>
                             <span id="employees" class="small-text color-change">
+                                <?php if (end($employees)) { ?>
                                 <?= end($employees)->deviation ?>
+                                <?php } ?>
                             </span><span class="small-text"> Since last week</span>
                         </div>
                     </div>
@@ -128,11 +159,17 @@
                 <div class="col-xxl-3 col-lg-3 col-md-6">
                     <div class="dashboard-box small">
                         <h4>Flatbed Ratio</h4>
-                        <h3><?= end($flatbed_ratios)->flatbed_ratio ?> loads/trucks</h3>
+                        <h3>
+                            <?php if (end($flatbed_ratios)) { ?>
+                            <?= end($flatbed_ratios)->flatbed_ratio ?> loads/trucks
+                            <?php } ?>
+                        </h3>
                         <br/>
                         <div>
                             <span id="flatbed_ratio" class="small-text color-change">
+                                <?php if (end($flatbed_ratios)) { ?>
                                 <?= end($flatbed_ratios)->deviation ?>
+                                <?php } ?>
                             </span><span class="small-text"> Since last week</span>
                         </div>
                     </div>
