@@ -12,11 +12,11 @@
                 <div class="col-xxl-3 col-lg-3 col-md-6">
                     <div class="dashboard-box small">
                         <h4>Freight P/L</h4>
-                        <h3>$<?= $freight_pl[sizeof($freight_pl) - 1]->freight_pl ?></h3>
+                        <h3>$<?= end($freight_pl)->freight_pl ?></h3>
                         <br/>
                         <div>
                             <span id="freight_PL" class="small-text color-change">
-                                <?= $freight_pl[sizeof($freight_pl) - 1]->deviation?>%
+                                <?= end($freight_pl)->deviation?>%
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -26,12 +26,12 @@
                     <div class="dashboard-box small">
                         <h4>Trucks YTD</h4>
                         <h3>
-                            <?= $trucks_ytd[sizeof($trucks_ytd)-1]->trucks_ytd ?>
+                            <?= end($trucks_ytd)->trucks_ytd ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="trucks_YTD" class="small-text color-change">
-                                <?= $trucks_ytd[sizeof($trucks_ytd)-1]->deviation ?>%
+                                <?= end($trucks_ytd)->deviation ?>%
                             </span>
                             <span class="small-text"> Since last year</span>
                         </div>
@@ -41,12 +41,12 @@
                     <div class="dashboard-box small">
                         <h4>Left to Stage (bdft)</h4>
                         <h3>
-                           <?= $left_to_stage[sizeof($left_to_stage)-1]->left_to_stage ?> M
+                           <?= end($left_to_stage)->left_to_stage ?> M
                         </h3>
                         <br/>
                         <div>
                             <span id="left_to_stage" class="small-text color-change">
-                                <?= $left_to_stage[sizeof($left_to_stage)-1]->deviation ?>%
+                                <?= end($left_to_stage)->deviation ?>%
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -57,12 +57,12 @@
                     <div class="dashboard-box small">
                         <h4>Diesel Pricing</h4>
                         <h3>
-                            $<?= $diesel_prices[sizeof($diesel_prices)-1]->diesel_price ?>
+                            $<?= end($diesel_prices)->diesel_price ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="diesel_pricing" class="small-text color-change">
-                                $<?= $diesel_prices[sizeof($diesel_prices)-1]->deviation ?>
+                                $<?= end($diesel_prices)->deviation ?>
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -74,12 +74,12 @@
                     <div class="dashboard-box small">
                         <h4>Logs to Peel</h4>
                         <h3>
-                            <?= $logs_to_peel[sizeof($logs_to_peel)-1]->logs ?>
+                            <?= end($logs_to_peel)->logs ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="logs_to_peel" class="small-text color-change color-change">
-                                <?= $logs_to_peel[sizeof($logs_to_peel)-1]->deviation ?>%
+                                <?= end($logs_to_peel)->deviation ?>%
                             </span>
                             <span class="small-text"> Since last week</span>
                         </div>
@@ -89,12 +89,12 @@
                     <div class="dashboard-box small">
                         <h4>Posts to Treat</h4>
                         <h3>
-                            <?= $posts_to_treat[sizeof($posts_to_treat)-1]->posts ?>
+                            <?= end($posts_to_treat)->posts ?>
                         </h3>
                         <br/>
                         <div>
                             <span id="posts_to_treat" class="small-text color-change">
-                                <?= $posts_to_treat[sizeof($posts_to_treat)-1]->deviation ?>
+                                <?= end($posts_to_treat)->deviation ?>
                             </span><span class="small-text"> Since last week</span>
                         </div>
                     </div>
@@ -104,14 +104,14 @@
                         <h4>Employees</h4>
                         <div style="display: flex">
                             <h3>
-                                <?= $employees[sizeof($employees)-1]->employees_prod ?>
+                                <?= end($employees)->employees_prod ?>
                                 <span class="small-text" style="font-size: .65em; font-weight: normal;">
                                     Prod.
                                 </span>
                             </h3>
                             <h3>
                                 &nbsp;
-                                 <?= $employees[sizeof($employees)-1]->employees_total ?>
+                                 <?= end($employees)->employees_total ?>
                                 <span class="small-text" style="font-size: .65em; font-weight: normal;">
                                     Total
                                 </span>
@@ -120,7 +120,7 @@
                         <br/>
                         <div>
                             <span id="employees" class="small-text color-change">
-                                <?= $employees[sizeof($employees)-1]->deviation ?>
+                                <?= end($employees)->deviation ?>
                             </span><span class="small-text"> Since last week</span>
                         </div>
                     </div>
@@ -128,11 +128,11 @@
                 <div class="col-xxl-3 col-lg-3 col-md-6">
                     <div class="dashboard-box small">
                         <h4>Flatbed Ratio</h4>
-                        <h3><?= $flatbed_ratios[sizeof($flatbed_ratios)-1]->flatbed_ratio ?> loads/trucks</h3>
+                        <h3><?= end($flatbed_ratios)->flatbed_ratio ?> loads/trucks</h3>
                         <br/>
                         <div>
                             <span id="flatbed_ratio" class="small-text color-change">
-                                <?= $flatbed_ratios[sizeof($flatbed_ratios)-1]->deviation ?>
+                                <?= end($flatbed_ratios)->deviation ?>
                             </span><span class="small-text"> Since last week</span>
                         </div>
                     </div>
@@ -143,11 +143,19 @@
             <div class="dashboard-box h-100">
                 <h4>Copper Market</h4>
                 <div style="display: flex;">
-                    <h3 style="margin-right: 10px;">$<?= array_values($copper_market)[sizeof(array_values($copper_market))-1][0] ?> </h3>
+                    <h3 style="margin-right: 10px;">
+                        $<?php if (!empty($copper_market)) { ?>
+                        <?= array_values($copper_market)[sizeof(array_values($copper_market))-1][0] ?>
+                        <?php } ?>
+                    </h3>
                     <span id="copper_market" class="color-change" style="margin-right: 5px;">
                         $
                     </span>
-                    <span class="small-text"> <?= date('F j, Y', strtotime(array_values($copper_market)[sizeof(array_values($copper_market))-1][1])) ?></span>
+                    <span class="small-text">
+                        <?php if (!empty($copper_market)) { ?>
+                        <?= date('F j, Y', strtotime(array_values($copper_market)[sizeof(array_values($copper_market))-1][1])) ?>
+                        <?php } ?>
+                    </span>
                 </div>
                 <div style="width: 100%; height: 70%;"><canvas id="copper_chart"></canvas></div>
             </div>

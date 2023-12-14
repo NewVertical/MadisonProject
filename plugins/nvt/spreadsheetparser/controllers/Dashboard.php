@@ -123,10 +123,12 @@ class Dashboard extends Controller
     public function queryByYear($arr, $date, $query): array
     {
         $queried = [];
+
         foreach ($arr as $element) {
             $year = substr($element->$date, 0, 4);
             $queried[$year][] = [$element->$query, $element->$date];
         }
+
         return $queried;
     }
 
