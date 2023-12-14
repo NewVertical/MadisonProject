@@ -21,6 +21,7 @@ return new class extends Migration
         Schema::create('nvt_spreadsheetparser_trucks_ytds', function(Blueprint $table) {
             $table->id();
             $table->float('trucks_ytd')->nullable();
+            $table->date('year');
             $table->float('deviation')->nullable();
         });
     }

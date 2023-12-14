@@ -16,10 +16,9 @@
 .dashboard-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     border: #efefef 1px solid;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 15px 20px;
     background: #ffffff;
     box-shadow: #efefef 0 0 4px 1px;
     margin: 10px 10px;
@@ -27,13 +26,14 @@
 
     .cell {
         font-size: .5em;
-        border-bottom: #98A6AD 3px solid;
-        border-right: #98A6AD 2px solid;
+        border-bottom: #d9d9d9 3px solid;
+        border-right: #d9d9d9 2px solid;
         padding: 9px 5px 3px 5px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: normal;
+        text-align: left;
 
     }
 
@@ -76,6 +76,10 @@
     height: 400px;
 }
 
+.tall {
+    height: 500px;
+}
+
 h4 {
     color: #98A6AD;
     font-size: 1.3em;
@@ -110,74 +114,24 @@ h3 {
     margin-right: 2vw;
 }
 
-.show-mobile {
-    display: flex;
-    flex-direction: column;
-}
-
-.hide-mobile {
+.hide-on-mobile {
     display: none;
 }
-
-.mobile-column {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.show-on-mobile {
+    display: flex;
 }
 
 @media (min-width: 1024px) {
-    .flexible {
-        flex-direction: row;
-        align-items: normal;
-        justify-content: normal;
+    .hide-on-mobile {
+        display: flex;
     }
-
+    .show-on-mobile {
+        display: none;
+    }
     .dashboard-box {
         .cell {
             font-size: .65em;
             padding: 12px 20px 5px 20px;
         }
-    }
-}
-
-@media (min-width: 1750px) {
-    .dashboard-box {
-        .shift-cell {
-            justify-content: center;
-            align-items: center;
-            border-bottom: #98A6AD 3px solid;
-            border-right: #98A6AD 2px solid;
-        }
-    }
-
-    .mobile-column {
-        flex-direction: row;
-        justify-content: normal;
-        align-items: normal;
-    }
-
-    .dashboard-row {
-        flex-direction: row;
-        align-items: normal;
-        justify-content: normal
-    }
-
-    .mobile-row {
-        flex-direction: row;
-    }
-
-    .dashboard-box {
-        margin: 0 10px;
-    }
-
-
-
-    .show-mobile {
-        display: none;
-    }
-
-    .hide-mobile {
-        display: flex;
-        flex-direction: column;
     }
 }

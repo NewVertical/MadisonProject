@@ -23,6 +23,7 @@ class LeftToStage extends Model
 
     public $fillable = [
         'left_to_stage',
+        'date',
         'deviation'
     ];
 }

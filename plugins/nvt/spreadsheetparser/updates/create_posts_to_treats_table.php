@@ -20,6 +20,7 @@ return new class extends Migration
         Schema::create('nvt_spreadsheetparser_posts_to_treats', function(Blueprint $table) {
             $table->id();
             $table->float('posts')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

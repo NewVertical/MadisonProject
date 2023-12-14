@@ -21,6 +21,7 @@ return new class extends Migration
             $table->id();
             $table->integer('employees_prod')->nullable();
             $table->integer('employees_total')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

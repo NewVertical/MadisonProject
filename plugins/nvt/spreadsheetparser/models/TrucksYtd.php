@@ -23,6 +23,7 @@ class TrucksYtd extends Model
 
     public $fillable = [
         'trucks_ytd',
+        'year',
         'deviation'
     ];
 }

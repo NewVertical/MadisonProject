@@ -23,6 +23,7 @@ class FreightPl extends Model
 
     public $fillable = [
         'freight_pl',
+        'date',
         'deviation'
     ];
 }

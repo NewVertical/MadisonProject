@@ -1,1 +1,38 @@
-v1.0.1: First version of SpreadsheetParser
+v1.0.1:
+    - First version of SpreadsheetParser
+v1.0.2:
+    - 'Created table copper_markets_table'
+    - create_copper_markets_table.php
+    - 'Created table customer_leaderboard_lumbers_table'
+    - create_customer_leaderboard_lumbers_table.php
+    - 'Created table create_customer_leaderboard_posts_table'
+    - create_customer_leaderboard_posts_table.php
+    - 'Created table diesel_prices_table'
+    - create_diesel_prices_table.php
+    - 'Created table employees_table'
+    - create_employees_table.php
+    - 'Created table flatbed_ratios_table'
+    - create_flatbed_ratios_table.php
+    - 'Created table freight_pls_table'
+    - create_freight_pls_table.php
+    - 'Created table inventory_values_table'
+    - create_inventory_values_table.php
+    - 'Created table inventory_volumes_table'
+    - create_inventory_volumes_table.php
+    - 'Created table left_to_stages_table'
+    - create_left_to_stages_table.php
+    - 'Created table logs_to_peels_table'
+    - create_logs_to_peels_table.php
+    - 'Created table lumber_markets_table'
+    - create_lumber_markets_table.php
+    - 'Created table posts_to_treats_table'
+    - create_posts_to_treats_table.php
+    - 'Created table product_prices_table'
+    - create_product_prices_table.php
+    - 'Created table trucks_sold_shipped_ytds_table'
+    - create_trucks_sold_shipped_ytds_table.php
+    - 'Created table trucks_ytds_table'
+    - create_trucks_ytds_table.php
+v1.0.3:
+    - 'Created inventory_volume_calculations_table'
+    - create_inventory_volume_calculations_table.php

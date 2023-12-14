@@ -21,7 +21,7 @@ return new class extends Migration
             $table->id();
             $table->string('inventory_type')->nullable();
             $table->float('current_value')->nullable();
-            $table->float('yesterday_value')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

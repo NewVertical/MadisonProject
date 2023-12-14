@@ -23,6 +23,7 @@ class LogsToPeel extends Model
 
     public $fillable = [
         'logs',
+        'date',
         'deviation'
     ];
 }

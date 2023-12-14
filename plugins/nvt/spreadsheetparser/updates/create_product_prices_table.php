@@ -21,7 +21,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name')->nullable();
             $table->integer('current_price')->nullable();
-            $table->integer('last_year_price')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }
