@@ -77,7 +77,6 @@ class Dashboard extends Controller
         $this->vars['logs_to_peel'] = LogsToPeel::all();
         $this->vars['lumber_market'] = LumberMarket::all();
         $this->vars['posts_to_treat'] = PostsToTreat::all();
-        $this->vars['trucks_sold_shipped'] = TrucksSoldShippedYTD::all();
         $this->vars['trucks_ytd'] = TrucksYtd::all();
 
         $product_prices_unsorted = ProductPrices::all();
@@ -119,6 +118,29 @@ class Dashboard extends Controller
             }
         }
         $this->vars['copper_market'] = $copper_market_as_array;
+
+        $trucks_sold_shipped = TrucksSoldShippedYtd::all()->sortBy([
+            ['date', 'desc']
+        ]);
+
+        $date = $trucks_sold_shipped[0]->year;
+        $trucks_years = [substr($date, 0, 4)];
+        $trucks_y3 = $trucks_sold_shipped->where('year', $date);
+
+        $year = strval(intval(substr($date, 0, 4))-1);
+        $date = $year . substr($date, 4);
+        $trucks_years[] = substr($date, 0, 4);
+        $trucks_y2 = $trucks_sold_shipped->where('year', $date);
+
+        $year = strval(intval(substr($date, 0, 4))-1);
+        $date = $year . substr($date, 4);
+        $trucks_years[] = substr($date, 0 , 4);
+        $trucks_y1 = $trucks_sold_shipped->where('year', $date);
+
+        $this->vars['trucks_years'] = $trucks_years;
+        $this->vars['trucks_y3'] = $trucks_y3;
+        $this->vars['trucks_y2'] = $trucks_y2;
+        $this->vars['trucks_y1'] = $trucks_y1;
 
         $lumber_market = LumberMarket::all()->sortBy([
             ['date', 'asc']
