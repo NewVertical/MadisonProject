@@ -76,11 +76,12 @@
                         </h3>
                         <br/>
                         <div>
-                            <span id="diesel_pricing" class="small-text color-change">
-                                $<?php if (sizeof($diesel_prices) > 0) { ?>
-                                    <?= number_format($diesel_prices[sizeof($diesel_prices)-1]->deviation, 2) ?>
-                                <?php } ?>
+                            <span id="diesel_pricing" class="small-text">
+                                $
                             </span>
+                            <span class="small-text color-change"><?php if (sizeof($diesel_prices) > 0) { ?>
+                                    <?= number_format($diesel_prices[sizeof($diesel_prices)-1]->deviation, 2) ?>
+                                <?php } ?></span>
                             <span class="small-text"> Since last week</span>
                         </div>
                     </div>
@@ -204,7 +205,10 @@
                 <div>
                     <h4>Lumber Market (2x4/2x12 Total)</h4>
                     <div style="display: flex;">
-                        <h3 style="margin-right: 10px;">$ </h3><span id="lumber_market" class="color-change" style="margin-right: 5px;">$ </span> <span class="small-text"> Since last week</span>
+                        <?php if (sizeof($lumber_dev) > 0) { ?>
+                            <h3 style="margin-right: 10px;">$ <?= $lumber_dev[sizeof($lumber_dev)-1]->price ?></h3>
+                            <span id="lumber_market" class="color-change" style="margin-right: 5px;">$ <?= $lumber_dev[sizeof($lumber_dev)-1]->deviation ?></span> <span class="small-text"> Since last week</span>
+                        <?php } ?>
                     </div>
                 </div>
                 <div style="width: 100%; height: 80%;"><canvas id="lumber_chart"></canvas></div>
@@ -339,7 +343,7 @@
                     <th></th>
                     <?php $index = 0;
                     foreach ($trucks_years as $year) {
-                        ?>
+                        if ($index >= 3) { break; }?>
                         <th scope="col" colspan="3"><?= $year ?></th>
                         <?php $index++; } ?>
                 </tr>
@@ -455,11 +459,11 @@
         let elements = document.getElementsByClassName('color-change');
 
         for (let i = 0; i < elements.length; i++) {
-            if (parseInt(elements[i].textContent) < 0) {
+            if (parseFloat(elements[i].textContent) < 0) {
                 elements[i].classList.toggle('perc-up', false);
                 elements[i].classList.toggle('small-text', false);
                 elements[i].classList.toggle('perc-down', true);
-            } else if (parseInt(elements[i].textContent) > 0) {
+            } else if (parseFloat(elements[i].textContent) > 0) {
                 elements[i].classList.toggle('perc-down', false);
                 elements[i].classList.toggle('small-text', false);
                 elements[i].classList.toggle('perc-up', true);

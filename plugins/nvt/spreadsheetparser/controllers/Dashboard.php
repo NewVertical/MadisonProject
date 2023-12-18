@@ -123,30 +123,38 @@ class Dashboard extends Controller
             ['date', 'desc']
         ]);
 
-        $date = $trucks_sold_shipped[0]->year;
-        $trucks_years = [substr($date, 0, 4)];
-        $trucks_y3 = $trucks_sold_shipped->where('year', $date);
+        if (sizeof($trucks_sold_shipped) > 0) {
+            $date = $trucks_sold_shipped[0]->year;
+            $trucks_years = [substr($date, 0, 4)];
+            $trucks_y3 = $trucks_sold_shipped->where('year', $date);
 
-        $year = strval(intval(substr($date, 0, 4))-1);
-        $date = $year . substr($date, 4);
-        $trucks_years[] = substr($date, 0, 4);
-        $trucks_y2 = $trucks_sold_shipped->where('year', $date);
+            $year = strval(intval(substr($date, 0, 4)) - 1);
+            $date = $year . substr($date, 4);
+            $trucks_years[] = substr($date, 0, 4);
+            $trucks_y2 = $trucks_sold_shipped->where('year', $date);
 
-        $year = strval(intval(substr($date, 0, 4))-1);
-        $date = $year . substr($date, 4);
-        $trucks_years[] = substr($date, 0 , 4);
-        $trucks_y1 = $trucks_sold_shipped->where('year', $date);
+            $year = strval(intval(substr($date, 0, 4)) - 1);
+            $date = $year . substr($date, 4);
+            $trucks_years[] = substr($date, 0, 4);
+            $trucks_y1 = $trucks_sold_shipped->where('year', $date);
 
-        $this->vars['trucks_years'] = $trucks_years;
-        $this->vars['trucks_y3'] = $trucks_y3;
-        $this->vars['trucks_y2'] = $trucks_y2;
-        $this->vars['trucks_y1'] = $trucks_y1;
+            $this->vars['trucks_years'] = $trucks_years;
+            $this->vars['trucks_y3'] = $trucks_y3;
+            $this->vars['trucks_y2'] = $trucks_y2;
+            $this->vars['trucks_y1'] = $trucks_y1;
+        } else {
+            $this->vars['trucks_years'] = [];
+            $this->vars['trucks_y3'] = [];
+            $this->vars['trucks_y2'] = [];
+            $this->vars['trucks_y1'] = [];
+        }
 
         $lumber_market = LumberMarket::all()->sortBy([
             ['date', 'asc']
         ]);
 
         $this->vars['lumber_market'] = $this->queryByYear($lumber_market, 'date', 'price');
+        $this->vars['lumber_dev'] = $lumber_market;
     }
 
     public function queryByYear($arr, $date, $query): array

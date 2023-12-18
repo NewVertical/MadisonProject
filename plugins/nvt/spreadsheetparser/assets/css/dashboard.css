@@ -93,15 +93,15 @@ h3 {
 }
 
 .perc-up {
-    color: limegreen;
+    color: limegreen !important;
     font-size: 1em;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .perc-down {
-    color: orangered;
+    color: orangered !important;
     font-size: 1em;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .small-text {

@@ -16,10 +16,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'SpreadsheetParser',
+            'name' => 'Hub',
             'description' => 'No description provided yet...',
             'author' => 'NVT',
-            'icon' => 'icon-leaf'
+            'icon' => 'icon-globe'
         ];
     }
 
@@ -73,9 +73,9 @@ class Plugin extends PluginBase
     {
         return [
             'spreadsheetparser' => [
-                'label' => 'SpreadsheetParser',
+                'label' => 'Hub',
                 'url' => Backend::url('nvt/spreadsheetparser/dashboard'),
-                'icon' => 'icon-leaf',
+                'icon' => 'icon-globe',
                 'permissions' => ['nvt.spreadsheetparser.*'],
                 'order' => 500,
             ],
