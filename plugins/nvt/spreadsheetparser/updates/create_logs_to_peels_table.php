@@ -20,6 +20,7 @@ return new class extends Migration
         Schema::create('nvt_spreadsheetparser_logs_to_peels', function(Blueprint $table) {
             $table->id();
             $table->float('logs')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

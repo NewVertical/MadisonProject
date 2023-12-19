@@ -23,6 +23,7 @@ class FlatbedRatio extends Model
 
     public $fillable = [
         'flatbed_ratio',
+        'date',
         'deviation'
     ];
 }

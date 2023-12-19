@@ -24,7 +24,7 @@ class ProductPrices extends Model
     public $fillable = [
         'product_name',
         'current_price',
-        'last_year_price',
+        'date',
         'deviation'
     ];
 }

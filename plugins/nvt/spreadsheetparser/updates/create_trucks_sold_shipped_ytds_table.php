@@ -23,7 +23,7 @@ return new class extends Migration
             $table->float('lumber')->nullable();
             $table->float('posts')->nullable();
             $table->float('total')->nullable();
-            $table->integer('year')->nullable();
+            $table->date('year')->nullable();
         });
     }
 

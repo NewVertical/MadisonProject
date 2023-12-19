@@ -24,6 +24,7 @@ class Employees extends Model
     public $fillable = [
         'employees_prod',
         'employees_total',
+        'date',
         'deviation'
     ];
 }

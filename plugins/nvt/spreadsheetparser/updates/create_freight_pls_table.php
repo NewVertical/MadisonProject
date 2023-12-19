@@ -21,6 +21,7 @@ return new class extends Migration
         Schema::create('nvt_spreadsheetparser_freight_pls', function(Blueprint $table) {
             $table->id();
             $table->float('freight_pl')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

@@ -20,6 +20,7 @@ return new class extends Migration
         Schema::create('nvt_spreadsheetparser_left_to_stages', function(Blueprint $table) {
             $table->id();
             $table->float('left_to_stage')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

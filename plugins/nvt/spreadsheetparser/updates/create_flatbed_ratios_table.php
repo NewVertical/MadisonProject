@@ -20,6 +20,7 @@ return new class extends Migration
         Schema::create('nvt_spreadsheetparser_flatbed_ratios', function(Blueprint $table) {
             $table->id();
             $table->float('flatbed_ratio')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

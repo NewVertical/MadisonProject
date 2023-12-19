@@ -24,7 +24,7 @@ class InventoryValue extends Model
     public $fillable = [
         'inventory_type',
         'current_value',
-        'yesterday_value',
+        'date',
         'deviation'
     ];
 }

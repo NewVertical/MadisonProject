@@ -20,6 +20,7 @@ return new class extends Migration
         Schema::create('nvt_spreadsheetparser_diesel_prices', function(Blueprint $table) {
             $table->id();
             $table->float('diesel_price')->nullable();
+            $table->date('date');
             $table->float('deviation')->nullable();
         });
     }

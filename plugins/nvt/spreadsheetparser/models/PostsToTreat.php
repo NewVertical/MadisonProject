@@ -23,6 +23,7 @@ class PostsToTreat extends Model
 
     public $fillable = [
         'posts',
+        'date',
         'deviation'
     ];
 }

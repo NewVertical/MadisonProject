@@ -23,6 +23,7 @@ class DieselPrice extends Model
 
     public $fillable = [
         'diesel_price',
+        'date',
         'deviation'
     ];
 }
