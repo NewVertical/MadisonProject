@@ -3,32 +3,9 @@ layout = "default"
 url = "/"
 ==
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="logo">
-        <h1><a href="#hero"><img src="/themes/pkurg-vesperr/assets/img/mwblue.png"></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="/themes/pkurg-vesperr/assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Products</a></li>
-          <li><a class="nav-link scrollto" href="#services">Our Company</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Madword</a></li>
-          <li><a class="nav-link scrollto" href="#team">MW Installer</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">FAQ</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Documents</a></li>
-          <li><a class="getstarted scrollto" href="#about">Contact Us</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
+<!-- End Header -->
+{% partial 'blocks/header' %}
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
@@ -56,7 +33,7 @@ url = "/"
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients clients">
-      <div class="container">
+      <div >
 
         <div class="row">
 
@@ -64,7 +41,7 @@ url = "/"
             <img src="/themes/pkurg-vesperr/assets/img/americancedar.jpg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
 
-          <div class="col-lg-2 col-md-4 col-6">
+          <div class="col-lg-2 col-md-5 col-4">
             <img src="/themes/pkurg-vesperr/assets/img/GenesseeLumber.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
           </div>
 
@@ -122,7 +99,7 @@ url = "/"
 
         <div class="section-title" data-aos="fade-up">
           <h2>Testimonials</h2>
-          <p>Magnam dolores commodi suscipit eum quidem consectetur velit</p>
+          <p>These testimonies to our product's reliability </p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -222,11 +199,11 @@ url = "/"
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
               <h3>Madison Wood</h3>
-              <p>Each employee, no matter what their job, is committed to producing quality products and providing
+              <h5>Each employee, no matter what their job, is committed to producing quality products and providing
                   quality service. Most of our business comes from repeat customers with whom we have long-lasting
                   relationships. When you become a customer, we make it our business to keep you as a customer; the
                   quality of our product and prompt service grow our business by growing your business. Our dedicated
-                  personnel work as a team to provide you with the finest treated lumber available.</p>
+                  personnel work as a team to provide you with the finest treated lumber available.</h5>
               <div class="social-links">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -240,17 +217,13 @@ url = "/"
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
-                <p>216 Oak Park Road<br>Madison, VA 22727</p>
+                <h5>216 Oak Park Road<br>Madison, VA 22727</h5>
               </div>
-
-              <div>
-                <i class="ri-mail-send-line"></i>
-                <p>info@example.com</p>
-              </div>
-
+                <br>
+                <br>
               <div>
                 <i class="ri-phone-line"></i>
-                <p>(844) 623-9663)</p>
+                <h5>(844) 623-9663)</h5>
               </div>
 
             </div>
@@ -287,29 +260,4 @@ url = "/"
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row d-flex align-items-center">
-        <div class="col-lg-6 text-lg-left text-center">
-          <div class="copyright">
-            &copy; Copyright <strong>Vesperr</strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">Home</a>
-            <a href="#about" class="scrollto">About</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+{% partial 'blocks/footer' %}
